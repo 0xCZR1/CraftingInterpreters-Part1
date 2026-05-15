@@ -1,6 +1,6 @@
+use Part1_Interp::lexer;
 use std::fs::File;
 use std::io::prelude::*;
-use Part1_Interp::lexer;
 
 pub fn run_path(path: String) -> std::io::Result<()> {
     let mut file = File::open(path)?;
@@ -18,8 +18,7 @@ pub fn run_path(path: String) -> std::io::Result<()> {
 
 pub fn run(source: String) {
     let mut lexer = lexer::Lexer::new(source, Vec::new());
-    let mut tokens = lexer.scan();
+    let tokens = lexer.scan();
 
     println!("{:#?}", tokens);
-
 }

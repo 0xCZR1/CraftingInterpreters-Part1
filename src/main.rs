@@ -6,7 +6,6 @@ fn main() {
     let path = value.unwrap();
     if let cli::Command::RunPath(s) = path {
         println!("value: {}", s);
-        orchestrator::run_path(s);
+        let _ = orchestrator::run_path(s);
     }
-
 }
